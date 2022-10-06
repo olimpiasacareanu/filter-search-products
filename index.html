@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Title -->
+    <title>Product filter & search</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="search-container">
+            <input type="search" id="search-input" placeholder="Search product name here... ">
+            <button id="search">Search</button>
+        </div>
+        <div id="buttons">
+            <button class="button-value" onclick="filterProduct('All')">All</button> 
+            <button class="button-value" onclick="filterProduct('Cars')">Cars</button> 
+            <button class="button-value" onclick="filterProduct('Resto')">Resto</button> 
+            <button class="button-value" onclick="filterProduct('Friends')">Friends</button> 
+            <button class="button-value" onclick="filterProduct('Chiara')">Chiara</button> 
+            <button class="button-order asc">PRICE ASC</button>
+            <button class="button-order desc">PRICE DESC</button>
+        </div>
+        <!-- <div id="filterPrice">
+         
+        </div> -->
+        <div id="products"></div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
