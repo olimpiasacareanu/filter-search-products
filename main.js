@@ -128,12 +128,43 @@ const search = () => {
     })
 }
 
+const sortPriceAsc = () => {
+    // select container products
+    let containerProducts = document.querySelector('#products')
+    //select all cards
+    let elements = document.querySelectorAll('.card')
+    // sorting all cards by ASC order
+    // append cards on container
+    Array.from(elements).sort((a, b)=> {
+        return a.lastChild.lastChild.innerText.slice(1) - b.lastChild.lastChild.innerText.slice(1)
+    }).forEach((elem)=> containerProducts.appendChild(elem))   
+}
+
+const sortPriceDesc = () => {
+    // select container products
+    let containerProducts = document.querySelector('#products')
+    //select all cards
+    let elements = document.querySelectorAll('.card')
+    // sorting all cards by ASC order
+    // append cards on container
+    Array.from(elements).sort((a, b)=> {
+        return b.lastChild.lastChild.innerText.slice(1) - a.lastChild.lastChild.innerText.slice(1)
+    }).forEach((elem)=> containerProducts.appendChild(elem))   
+}
+
 window.onload = () => {
     // evenement pour la recherche (search)
     let btn = document.querySelector('#search')
     btn.addEventListener('click', search)
     // event pour filtrer les elements
     filterProduct('All')
-
+    // event for sort the cards by price
+    let asc = document.querySelector('.asc')
+    asc.addEventListener('click', sortPriceAsc)
+     // event for sort the cards by price
+    let desc = document.querySelector('.desc')
+    desc.addEventListener('click', sortPriceDesc)
 
 }
+
+
